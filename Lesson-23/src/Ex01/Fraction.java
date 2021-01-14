@@ -29,10 +29,10 @@ public class Fraction {
 		return "Fraction [nameFraction=" + nameFraction + "]";
 	}
 	
-	List<Deputat> deputat = new ArrayList<>();
+	List<Deputat> deputatList = new ArrayList<>();
 	
-	Supplier<Deputat> addDeputat = () ->{
-		Scanner sc = Scanner(System.in);
+	Supplier<Deputat> createDeputat = () ->{
+		Scanner sc = new Scanner(System.in);
 		System.out.println("¬вед≥ть пр≥звище депутата:");
 		String lastName = sc.next();
 		System.out.println("¬вед≥ть ≥м'€ депутата:");
@@ -46,9 +46,10 @@ public class Fraction {
 		
 		return new Deputat(lastName, firstName, height, weigh, bribe);
 	};
-
-	private Scanner Scanner(InputStream in) {
-		
-		return null;
+	
+	public void addDeputat() {
+		deputatList.add((Deputat) createDeputat);
 	}
+
+	
 }
